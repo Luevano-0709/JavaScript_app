@@ -1,35 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>HELLO...</h1> 
-
-    <script>
-        //Var
-        var nombre = 'Manuel Luevano';
-        var edad = 19;
-        var ciudad = 'San Luis Rio Colorado';
-        var universidad = 'UT';
-        var carrera = 'Tecnologias de la informacion';
-        var cuatrimestre = 4;
-        var estatura = 1.67;
-        var peso = 72;
-        //let
-        //const
-
-        console.log(`Mi nombre es ${nombre}, tengo ${edad} y vivo en ${ciudad}.
-        Estudio en la universidad conocida como ${universidad} en la carrera de ${carrera} en el 
-        cuatrimestre ${cuatrimestre}. Mido cerca de ${estatura} y peso ${peso}.`);
-
-        //Concatenar con el signo +
-        console.log('Hola desde java script mi nombre es ' + nombre + 'y tengo una edad de ' + edad);
-
-        console.log(`Hola, desde java script ${nombre}, y tengo una edad de ${edad}`);
-    </script>
-</body>
-</html>
+git add .
+git commit -m "Se realizo una app para calcular la edad"
+git push
