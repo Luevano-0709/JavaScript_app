@@ -8,8 +8,37 @@
 </head>
 
 <body>
-    <h1>HELLO...</h1> 
-    <script src="calcular edad.js"></script>
-</body>
+    <div id="app"">
+        <h1>Contador:{{contador}}</h1>
+        <button v-on:click="incrementar()">incrementar</button>
+        <button v-on:click="limpiar()">limpiar</button>
+        <button v-on:click="decrementar()">Descrementar</button>
+    </div>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    contador: 0,
+                }
+            }, 
+            methods: {
+                incrementar(){
+                    this.contador++;
+                },
+                limpiar(){
+                    this.contador=0;
+                },
+                decrementar(){
+                    this.contador--;
+                    if (this.contador<0){
+                        this.contador=0;
+                    }
+                    
+                },
+        }
+    }).mount(`#app`);
+    </script>  
+</body>
 </html>
