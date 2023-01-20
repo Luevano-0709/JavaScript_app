@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAMA...</title>
+</head>
+
+<body>
+
+    <div id="app"">
+        <h1>Mi nombre es: {{nombre}} </h1>
+        <input v-model="nombre" type="text">
+
+        <h1> Captura tu edad: </h1>
+        <input v-model="verificaredad" type="number">
+        <h2>{{resultado}}</h2>
+        <button @click="CalcularEdad()">Calcular</button>
+
+
+        <h1>Carrera: {{carrera}}</h1>
+        <select v-model="carrera">
+            <option>Software.</option>
+            <option>Deportes.</option>
+            <option>Negocios.</option>
+            <option>Matematicas.</option>
+        </select>
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="model.js"></script>
+
+</body>
+
+</html>

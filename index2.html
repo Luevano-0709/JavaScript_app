@@ -10,10 +10,11 @@
 <body>
 
     <div id="app"">
-    <h1 v-if="becado==true">Estoy Becado :) </h1>
-    <h1 v-else>Perdi mi beca. :c</h1>
-    <button @click="conbecado()">Estas becado </button>
-    <button @click="sinbeca()">Ya no estas becado </button>
+        <h1 v-if="becado==true"> Estoy Becado :) </h1>
+        <h1 v-else> Perdi mi beca. :c</h1>
+
+        <button @click="becado=true"> Estas becado </button>
+        <button @click="becado=false"> Ya no estas becado </button>
     </div>
 
 
