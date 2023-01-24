@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,26 @@
 </head>
 
 <body>
+    <div id="app">
+        <h1>lista de Carrito</h1>
+        <input v-model="producto" type="text" placeholder="Nombre del producto">
+        <button @click="agregarProducto">Agregar</button>
+        <button @click="carrito=[]"> Limpiar Carrito </button>
 
-    <div id="app"">
-        <h1 v-if="becado==true"> Estoy Becado :) </h1>
-        <h1 v-else> Perdi mi beca. :c</h1>
-
-        <button @click="becado=true"> Estas becado </button>
-        <button @click="becado=false"> Ya no estas becado </button>
+        <ul>
+            <li v-for="producto in carrito">
+                {{producto}}
+            </li>
+        </ul>
     </div>
-
-
+    <!-- <div id="app"">
+    <h1 v-if="becado==true">Estoy Becado :) </h1>
+    <h1 v-else>Perdi mi beca. :c</h1>
+    <button @click="conbecado()">Estas becado </button>
+    <button @click="sinbeca()">Ya no estas becado </button>
+    </div> -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="condicionales.js"></script>
-
+    <script src="Carrito.js"></script>
 </body>
 
 </html>
