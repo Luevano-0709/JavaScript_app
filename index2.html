@@ -6,11 +6,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROGRAMA...</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="app">
-        <h1>lista de Carrito</h1>
+    <div class="container mt-3" id="app">
+        <h1>Mis productos:</h1>
+        <form @submit.prevent>
+            <div class="mb-3">
+                <label class="form-label">Nombre del prodcuto: </label>
+                <input v-model="nombre" type="text" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Precio del producto: </label>
+                <input v-model="precio" type="number" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Cantidad de productos: </label>
+                <input v-model="cantidad" type="number" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fecha de llegada: </label>
+                <input v-model="fecha" type="date" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Sabor del producto: </label>
+                <input v-model="sabor" type="text" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo de producto: </label>
+                <input v-model="tipo" type="text" class="form-control">
+            </div>
+
+            <button @click="agregar()" type="" class="btn btn-primary">Agregar</button>
+        </form>
+
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Sabor</th>
+                    <th scope="col">Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr v-for="producto in productos">
+                    <th scope="row">{{producto.nombre}}</th>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.fecha}}</td>
+                    <td>{{producto.sabor}}</td>
+                    <td>{{producto.tipo}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- <h1>lista de Carrito</h1>
         <input v-model="producto" type="text" placeholder="Nombre del producto">
         <button @click="agregarProducto">Agregar</button>
         <button @click="carrito=[]"> Limpiar Carrito </button>
@@ -19,14 +84,18 @@
             <li v-for="producto in carrito">
                 {{producto}}
             </li>
-        </ul>
-    </div>
+        </ul> -->
+
     <!-- <div id="app"">
     <h1 v-if="becado==true">Estoy Becado :) </h1>
     <h1 v-else>Perdi mi beca. :c</h1>
     <button @click="conbecado()">Estas becado </button>
     <button @click="sinbeca()">Ya no estas becado </button>
     </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="Carrito.js"></script>
 </body>
