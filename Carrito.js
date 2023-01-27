@@ -1,12 +1,14 @@
 Vue.createApp({
     data(){
         return{
+            colorTable:'danger',
             nombre:'',
             precio:'',
             cantidad:'',
             fecha:'',
             sabor:'',
             tipo:'',
+            url:'',
             productos: []
 /*             carrito: [],
             producto: '' */
@@ -20,8 +22,8 @@ Vue.createApp({
                 cantidad:this.cantidad,
                 fecha:this.fecha,
                 sabor:this.sabor,
-                tipo:this.tipo
-
+                tipo:this.tipo,
+                url:this.url
             }
             this.productos.push(producto);
         }

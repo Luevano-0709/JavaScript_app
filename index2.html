@@ -13,41 +13,51 @@
 <body>
     <div class="container mt-3" id="app">
         <h1>Mis productos:</h1>
-        <form @submit.prevent>
+        <form @submit.prevent="agregar()">
             <div class="mb-3">
                 <label class="form-label">Nombre del prodcuto: </label>
                 <input v-model="nombre" type="text" class="form-control">
             </div>
-
             <div class="mb-3">
                 <label class="form-label">Precio del producto: </label>
                 <input v-model="precio" type="number" class="form-control">
             </div>
-
             <div class="mb-3">
                 <label class="form-label">Cantidad de productos: </label>
                 <input v-model="cantidad" type="number" class="form-control">
             </div>
-
             <div class="mb-3">
                 <label class="form-label">Fecha de llegada: </label>
                 <input v-model="fecha" type="date" class="form-control">
             </div>
-
             <div class="mb-3">
                 <label class="form-label">Sabor del producto: </label>
                 <input v-model="sabor" type="text" class="form-control">
-            </div>
-
+            </div>  
             <div class="mb-3">
                 <label class="form-label">Tipo de producto: </label>
                 <input v-model="tipo" type="text" class="form-control">
             </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen: </label>
+                <input required v-model="url" type="text" class="form-control">
+            </div>
 
-            <button @click="agregar()" type="" class="btn btn-primary">Agregar</button>
+            <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
 
-        <table class="table mt-5">
+        <select class="form-control mb-3" v-model="colorTable">
+            <option value="dark">Color negro</option>
+            <option value="primary">Color azul</option>
+            <option value="danger">Color rosa</option>
+            <option value="success">Color verde</option>
+            <option value="light">Color blanco</option>
+            <option value="info">Color azul claro</option>
+            <option value="warning">Color amarillo</option>
+            <option value="secondary">Color gris</option>
+        </select>
+
+        <table :class="'table mt-5 table-'+colorTable">
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>
@@ -56,6 +66,7 @@
                     <th scope="col">Fecha</th>
                     <th scope="col">Sabor</th>
                     <th scope="col">Tipo</th>
+                    <th scope="col">Imagen</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,6 +78,7 @@
                     <td>{{producto.fecha}}</td>
                     <td>{{producto.sabor}}</td>
                     <td>{{producto.tipo}}</td>
+                    <td><img :src="producto.url" alt="" style="width: 100px;"></td>
 
                 </tr>
 
