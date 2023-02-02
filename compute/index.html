@@ -16,20 +16,20 @@
         <input v-model="edad" type="number" class="form-control">
         <button class="btn btn-success">Calcular</button>
         <p>{{calcularedad}}</p>
-    </div>
+    
 
-    <div class="" id="app">
-        <select v-model="url" class="form-select" aria-label="Default select example">
+    <div class="container mt-3" id="app">
+        <select v-model="frutas" class="form-select" aria-label="Default select example">
             <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Three</option>
-            <option value="5">Three</option>
+            <option value="manzana">One</option>
+            <option value="naranja">Two</option>
+            <option value="limon">Three</option>
+            <option value="papaya">Three</option>
+            <option value="uva">Three</option>
           </select>
-
+          <img :src="mostrarfrutas" alt="">
     </div>
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
