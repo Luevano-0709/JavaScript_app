@@ -22,9 +22,49 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">Nombre: {{pokemon.name}}</h5>
+                  <p>Habilidades</p>
+                  <span v-for="abilidad in pokemon.abilities" class="mx-1 badge bg-dark">
+                    {{abilidad.ability.name}}
+                  </span>
+                  <p>Estatus:</p>
+                  <span v-for="states in pokemon.stats" class="mx-1 badge bg-dark">
+                    {{states.stat.name}}
+                  </span>
+                  <p>Especie: </p>
+                  <span v-for="especie in pokemon.species" class="mx-1 badge bg-dark"> 
+                    {{especie.name}}
+                  </span>
+                  <p>Tipo:</p>
+                  <span v-for="tipos in pokemon.types" class="mx-1 badge bg-dark">
+                    {{tipos.type.name}}
+                  </span>
                   <p class="card-text">ID: {{pokemon.id}}</p>
-                  <p class="card-text"> Especie: {{pokemon.species}}<small class="text-muted">Experiencia base: {{pokemon.base_experience}}</small></p>
-                  <p class="card-text"> Altura: {{pokemon.height}}</p>
+                  <p class="card-text">Experiencia base: {{pokemon.base_experience}}</p>
+                  <p class="card-text">Altura: {{pokemon.height}}</p>
+                  <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                      Juegos
+                    </button>
+                  </p>
+                  <div style="min-height: 120px;">
+                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                      <div v-for="games in pokemon.game_indices" class="card card-body" style="width: 300px;">
+                        {{games.version.name}}
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                      Movimientos 
+                    </button>
+                  </p>
+                  <div style="min-height: 120px;">
+                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                      <div v-for="move in pokemon.moves" class="card card-body" style="width: 300px;">
+                        {{move.move.name}}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
